@@ -1,9 +1,13 @@
-export type FoodItem = {
+export interface FoodItem {
+  id: number;
   name: string;
   price: number;
-};
+}
 
-export type FoodCategory = {
-  category: string;
+export interface MenuCategory {
+  category: {
+    id: number;
+    name: string;
+  };
   items: FoodItem[];
-};
+}

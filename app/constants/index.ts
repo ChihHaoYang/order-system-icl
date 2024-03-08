@@ -1,40 +1,52 @@
-import { FoodCategory } from '../types';
+import { MenuCategory } from '../types';
 
-export const FOOD_LIST: FoodCategory[] = [
+export const MENU: MenuCategory[] = [
   {
-    category: 'food',
+    category: {
+      id: 0,
+      name: 'food'
+    },
     items: [
-      { name: 'hot dog', price: 49 },
-      { name: 'cheese burger', price: 79 },
-      { name: 'fried chicken', price: 99 },
-      { name: 'steak', price: 300 }
+      { id: 0, name: 'hot dog', price: 49 },
+      { id: 1, name: 'cheese burger', price: 79 },
+      { id: 2, name: 'fried chicken', price: 99 },
+      { id: 3, name: 'steak', price: 300 }
     ]
   },
   {
-    category: 'drink',
+    category: {
+      id: 1,
+      name: 'drink'
+    },
     items: [
-      { name: 'black tea', price: 50 },
-      { name: 'green tea', price: 50 },
-      { name: 'milk', price: 50 },
-      { name: 'coffee', price: 90 }
+      { id: 100, name: 'black tea', price: 50 },
+      { id: 101, name: 'green tea', price: 50 },
+      { id: 102, name: 'milk', price: 50 },
+      { id: 103, name: 'coffee', price: 90 }
     ]
   },
   {
-    category: 'soup',
+    category: {
+      id: 2,
+      name: 'soup'
+    },
     items: [
-      { name: 'corn soup', price: 55 },
-      { name: 'tomato soup', price: 40 },
-      { name: 'miso soup', price: 40 },
-      { name: 'onion soup', price: 40 }
+      { id: 200, name: 'corn soup', price: 55 },
+      { id: 201, name: 'tomato soup', price: 40 },
+      { id: 202, name: 'miso soup', price: 40 },
+      { id: 203, name: 'onion soup', price: 40 }
     ]
   },
   {
-    category: 'dessert',
+    category: {
+      id: 3,
+      name: 'dessert'
+    },
     items: [
-      { name: 'chocolate cake', price: 79 },
-      { name: 'cheese cake', price: 69 },
-      { name: 'apple pie', price: 50 },
-      { name: 'onion soup', price: 40 }
+      { id: 300, name: 'chocolate cake', price: 79 },
+      { id: 301, name: 'cheese cake', price: 69 },
+      { id: 302, name: 'apple pie', price: 50 },
+      { id: 303, name: 'onion soup', price: 40 }
     ]
   }
 ];
