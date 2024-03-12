@@ -3,11 +3,7 @@ import { MENU } from '../constants';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 
-describe('Menu Item', () => {
-  afterEach(() => {
-    jest.clearAllMocks();
-  });
-
+describe('Menu Page', () => {
   it('should render component successfully', () => {
     render(<Menu />);
     const categoryTestId = `category-${MENU[0].category.id}`;

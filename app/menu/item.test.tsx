@@ -10,10 +10,6 @@ describe('Menu Item', () => {
     addToCart
   };
 
-  afterEach(() => {
-    jest.clearAllMocks();
-  });
-
   it('should render component successfully', () => {
     render(<Item {...data} />);
     const element = screen.getByTestId(`menu-item-${data.id}`);
