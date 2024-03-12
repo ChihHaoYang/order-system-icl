@@ -1,19 +1,11 @@
 'use client';
 import React from 'react';
-import { useFoodState, updateItem } from '../store';
+import { useFoodState, submit } from '../store';
 import { LinkButton, Container } from '../components';
 import Item from './item';
 
-export type CartProps = {
-  items: {
-    name: string;
-    quantity: number;
-    price: number;
-  }[];
-};
-
 const Cart = () => {
-  const { cartItems, submit } = useFoodState();
+  const { cartItems } = useFoodState();
 
   function renderContent() {
     if (cartItems.length === 0) {

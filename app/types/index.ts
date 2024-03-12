@@ -11,3 +11,12 @@ export interface MenuCategory {
   };
   items: FoodItem[];
 }
+
+export interface CartItem extends FoodItem {
+  quantity: number;
+}
+
+export interface HistoryItem {
+  items: CartItem[];
+  total: number;
+}

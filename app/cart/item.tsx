@@ -1,13 +1,8 @@
 import React, { memo } from 'react';
-import { FoodItem } from '../types';
 import { setItemValue } from '../store';
+import { CartItem } from '../types';
 
-export interface ItemProps extends FoodItem {
-  // updateCount: (newCount: number) => void;
-  quantity: number;
-}
-
-const Item = ({ id, name, price, quantity }: ItemProps) => {
+const Item = ({ id, name, price, quantity }: CartItem) => {
   return (
     <li
       data-testid={`cart-item-${id}`}

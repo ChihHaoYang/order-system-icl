@@ -1,18 +1,11 @@
 import { create } from 'zustand';
 import { MENU } from '../constants';
-
-type CartItem = {
-  id: number;
-  name: string;
-  price: number;
-  quantity: number;
-};
+import { CartItem, HistoryItem } from '../types';
 
 export interface FoodState {
   foodDic: Record<number, Omit<CartItem, 'quantity'>>;
   cartItems: CartItem[];
-  history: CartItem[][];
-  submit: () => void;
+  history: HistoryItem[];
 }
 
 export const useFoodState = create<FoodState>()(set => ({
@@ -23,14 +16,7 @@ export const useFoodState = create<FoodState>()(set => ({
     return acc;
   }, {} as Record<number, Omit<CartItem, 'quantity'>>),
   cartItems: [],
-  history: [],
-  submit: () =>
-    set(state => {
-      return {
-        history: [...state.history, [...state.cartItems]],
-        cartItems: []
-      };
-    })
+  history: []
 }));
 
 export const setItemValue = (id: number, newValue: number) => {
@@ -91,6 +77,24 @@ export const updateItem = (id: number, by: number) => {
     // Add to list
     return {
       cartItems: [...state.cartItems, { ...state.foodDic[id], quantity: by }]
+    };
+  });
+};
+
+export const submit = () => {
+  useFoodState.setState(state => {
+    return {
+      history: [
+        ...state.history,
+        {
+          items: state.cartItems,
+          total: state.cartItems.reduce(
+            (acc, current) => acc + current.price * current.quantity,
+            0
+          )
+        }
+      ],
+      cartItems: []
     };
   });
 };
