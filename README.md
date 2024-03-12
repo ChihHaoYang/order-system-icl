@@ -6,6 +6,26 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - [tailwind css](https://tailwindcss.com/)
 - [testing-library-react](https://testing-library.com/docs/react-testing-library/intro/)
 
+## Files
+There are 3 pages in this repository, which are Menu, Cart, and History. 
+Each of them will be in a folder with the same name as it, since it's using nextjs's routing mechanism.
+```
+menu/page.tsx -> /menu
+cart/page.tsx -> /cart
+history/page.tsx -> /history
+```
+
+## Screenshots
+### Menu
+![image](https://github.com/ChihHaoYang/order-system-icl/assets/5263586/4d3fd69e-dc8d-4ef6-8e82-10460115dd5d)
+
+### Cart
+![image](https://github.com/ChihHaoYang/order-system-icl/assets/5263586/6a187248-006e-46e1-ad96-5c804a73275a)
+
+### History
+![image](https://github.com/ChihHaoYang/order-system-icl/assets/5263586/4f1af5ec-6225-424d-887f-d41ae9fe9207)
+
+
 ## Getting Started
 
 First, run the development server:
@@ -14,10 +34,6 @@ First, run the development server:
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -25,6 +41,14 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+
+## Test
+
+```bash
+npm run test
+# or
+yarn run test
+```
 
 ## Learn More
 
