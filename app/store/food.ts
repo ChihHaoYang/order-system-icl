@@ -87,6 +87,7 @@ export const submit = () => {
       history: [
         ...state.history,
         {
+          id: state.history.length,
           items: state.cartItems,
           total: state.cartItems.reduce(
             (acc, current) => acc + current.price * current.quantity,
@@ -95,6 +96,14 @@ export const submit = () => {
         }
       ],
       cartItems: []
+    };
+  });
+};
+
+export const removeFromHistory = (id: number) => {
+  useFoodState.setState(state => {
+    return {
+      history: state.history.filter(e => e.id !== id)
     };
   });
 };

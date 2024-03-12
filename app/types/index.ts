@@ -17,6 +17,7 @@ export interface CartItem extends FoodItem {
 }
 
 export interface HistoryItem {
+  id: number;
   items: CartItem[];
   total: number;
 }
