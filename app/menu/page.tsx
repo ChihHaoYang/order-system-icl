@@ -7,7 +7,11 @@ import { LinkButton, Container } from '../components';
 import { useShallow } from 'zustand/react/shallow';
 
 const Menu = () => {
-  const itemCount = useFoodState(useShallow(state => state.cartItems.length));
+  const itemCount = useFoodState(
+    useShallow(state =>
+      state.cartItems.reduce((acc, curr) => acc + curr.quantity, 0)
+    )
+  );
 
   return (
     <Container>
