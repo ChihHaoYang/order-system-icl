@@ -23,7 +23,10 @@ const Menu = () => {
           {MENU.map(food => {
             return (
               <Fragment key={food.category.id}>
-                <li className='capitalize font-bold text-lg'>
+                <li
+                  data-testid={`category-${food.category.id}`}
+                  className='capitalize font-bold text-lg'
+                >
                   {food.category.name}
                 </li>
                 <ul className='indent-5 mb-2'>
