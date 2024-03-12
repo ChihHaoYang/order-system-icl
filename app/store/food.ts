@@ -33,6 +33,28 @@ export const useFoodState = create<FoodState>()(set => ({
     })
 }));
 
+export const setItemValue = (id: number, newValue: number) => {
+  useFoodState.setState(state => {
+    if (newValue <= 0) {
+      return {
+        cartItems: state.cartItems.filter(e => e.id !== id)
+      };
+    }
+    return {
+      cartItems: state.cartItems.map(item => {
+        if (item.id === id) {
+          return {
+            ...item,
+            quantity: newValue
+          };
+        }
+
+        return item;
+      })
+    };
+  });
+};
+
 export const updateItem = (id: number, by: number) => {
   useFoodState.setState(state => {
     const { cartItems } = state;
