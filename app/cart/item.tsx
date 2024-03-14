@@ -16,7 +16,7 @@ const Item = ({ id, name, price, quantity }: CartItem) => {
           value={quantity}
           type='number'
           onChange={e => {
-            const newValue = +e.target.value;
+            const newValue = parseInt(e.target.value);
             if (newValue <= 0) {
               const confirm = window.confirm(
                 'Remove this item from your cart?'
@@ -25,7 +25,7 @@ const Item = ({ id, name, price, quantity }: CartItem) => {
                 return;
               }
             }
-            setItemValue(id, +e.target.value);
+            setItemValue(id, newValue);
           }}
           className='w-24 border text-right'
         />
