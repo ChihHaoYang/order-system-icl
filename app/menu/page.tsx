@@ -15,7 +15,7 @@ const Menu = () => {
 
   return (
     <Container>
-      <ul className='w-full'>
+      <ul className='w-full max-h-96 overflow-auto'>
         {MENU.map(food => {
           return (
             <Fragment key={food.category.id}>

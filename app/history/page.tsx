@@ -17,13 +17,11 @@ const History = () => {
     }
 
     return (
-      <div className='w-full'>
-        <ul>
-          {history.map(item => {
-            return <Item key={item.id} {...item} />;
-          })}
-        </ul>
-      </div>
+      <ul className='w-full max-h-96 overflow-auto'>
+        {history.map(item => {
+          return <Item key={item.id} {...item} />;
+        })}
+      </ul>
     );
   }
 

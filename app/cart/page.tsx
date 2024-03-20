@@ -23,7 +23,7 @@ const Cart = () => {
 
     return (
       <div className='w-full'>
-        <ul>
+        <ul className='w-full max-h-96 overflow-auto'>
           {cartItems.map(item => {
             return <Item key={item.id} {...item} />;
           })}
